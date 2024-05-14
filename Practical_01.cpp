@@ -27,7 +27,29 @@ void hammingEncode(const int* message, int* encodedMessage) {
 }
 
 // Function to decode a 7-bit Hamming code into a 4-bit message
-void hammingDecode(const int* received, int* decodedMessage) {
+// void hammingDecode(const int* received, int* decodedMessage) {
+//     // Calculate syndrome bits
+//     int s1 = received[2] ^ received[0] ^ received[1] ^ received[3]; // P1
+//     int s2 = received[4] ^ received[0] ^ received[1] ^ received[5]; // P2
+//     int s3 = received[5] ^ received[0] ^ received[2] ^ received[3]; // P3
+
+//     // Determine error position
+//     int errorPosition = s1 + s2 * 2 + s3 * 4;
+
+//     // Correct error
+//     if (errorPosition > 0) {
+//         received[errorPosition - 1] ^= 1; // Flip the erroneous bit
+//     }
+
+//     // Retrieve original message bits
+//     decodedMessage[0] = received[0];
+//     decodedMessage[1] = received[1];
+//     decodedMessage[2] = received[3];
+//     decodedMessage[3] = received[6];
+// }
+
+// Function to decode a 7-bit Hamming code into a 4-bit message
+void hammingDecode(int* received, int* decodedMessage) {
     // Calculate syndrome bits
     int s1 = received[2] ^ received[0] ^ received[1] ^ received[3]; // P1
     int s2 = received[4] ^ received[0] ^ received[1] ^ received[5]; // P2
@@ -38,7 +60,7 @@ void hammingDecode(const int* received, int* decodedMessage) {
 
     // Correct error
     if (errorPosition > 0) {
-        received[errorPosition - 1] ^ = 1; // Flip the erroneous bit
+        received[errorPosition - 1] ^= 1; // Flip the erroneous bit
     }
 
     // Retrieve original message bits
