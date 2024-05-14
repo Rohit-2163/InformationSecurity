@@ -10,7 +10,7 @@
         <li>✅Implement rail fence cipher transposition operation.</li>
         <li>✅Implement row transposition cipher transposition operation.</li>
         <li>✅Implement product cipher transposition operation.</li>
-        <li>✅Illustrate the Ciphertext only and Known Plaintext attacks.</li>
+        <li>❌Illustrate the Ciphertext only and Known Plaintext attacks.</li>
         <li>✅Implement a stream cipher technique.</li>
 </ol>
 <h2>🖥🖱</h2>
